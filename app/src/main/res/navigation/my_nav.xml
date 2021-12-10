@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/remindListFragment">
+
+    <fragment
+        android:id="@+id/remindListFragment"
+        android:name="com.example.reminder.ui.fragments.RemindListFragment"
+        android:label="fragment_remind_list"
+        tools:layout="@layout/fragment_remind_list" >
+        <action
+            android:id="@+id/action_remindListFragment_to_remindDetailsFragment"
+            app:destination="@id/remindDetailsFragment" />
+        <action
+            android:id="@+id/action_remindListFragment_to_addRemindFragment"
+            app:destination="@id/addRemindFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/remindDetailsFragment"
+        android:name="com.example.reminder.ui.fragments.RemindDetailsFragment"
+        android:label="fragment_remind_details"
+        tools:layout="@layout/fragment_remind_details" >
+        <action
+            android:id="@+id/action_remindDetailsFragment_to_remindListFragment"
+            app:destination="@id/remindListFragment" />
+        <argument
+            android:name="remindId"
+            app:argType="long"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/addRemindFragment"
+        android:name="com.example.reminder.ui.fragments.AddRemindFragment"
+        android:label="fragment_add_remind"
+        tools:layout="@layout/fragment_add_remind" >
+        <action
+            android:id="@+id/action_addRemindFragment_to_remindListFragment"
+            app:destination="@id/remindListFragment" />
+
+    </fragment>
+</navigation>
